@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Recipe>
+
+<div class="container mt-4">
+    <h2>Recipe Management</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cooking Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var recipe in Model)
+        {
+            @Html.Partial("_RecipesRecipeItemPartial", recipe)
+        }
+        </tbody>
+    </table>
+</div>

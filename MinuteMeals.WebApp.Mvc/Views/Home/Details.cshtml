@@ -1,0 +1,20 @@
+﻿@model Recipe
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2>@Model.Name</h2>
+        </div>
+        <div class="card-body">
+            <h5>Cooking Time: @Model.CookingTimeInMinutes minutes</h5>
+            <h5 class="mt-4">Ingredients</h5>
+            <p>@Model.Ingredients</p>
+            <h5 class="mt-4">Steps</h5>
+            @foreach (var step in Model.Steps.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                <p>@step.Trim()</p>
+            }
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary mt-4">Back to Recipe List</a>
+        </div>
+    </div>
+</div>

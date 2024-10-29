@@ -1,0 +1,9 @@
+﻿@model Recipe
+
+<div class="list-group-item">
+    <h5>
+        <a asp-controller="Home" asp-action="Details" asp-route-id="@Model.Id" class="text-dark text-decoration-none d-block">
+            @Model.Name - Cooking Time: @Model.CookingTimeInMinutes minutes
+        </a>
+    </h5>
+</div>

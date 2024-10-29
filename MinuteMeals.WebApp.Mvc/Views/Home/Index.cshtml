@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Recipe>
+
+<div class="container mt-4">
+    <h1>Recipe List</h1>
+    <div class="list-group">
+        @foreach (var recipe in Model)
+        {
+            @Html.Partial("_HomeRecipeItemPartial", recipe)
+        }
+    </div>
+</div>
